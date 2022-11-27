@@ -20,7 +20,7 @@ Sachant que :
 
 ## Extraction de données
 
-Le fichier assets/data.json contient un flux json contenant un ensemble d'enregistrement **records**. 
+Le fichier **assets/data.json** contient un flux json contenant un ensemble d'enregistrements **records**. 
 
 ### Etape 1
 
@@ -58,6 +58,23 @@ En passant en paramétre,
 Il est possible de récuperer les stations de la ville de LILLE. 
 
 En utilisant le module requests, interroger cette API afin d'afficher la liste des stations disponibles pour une ville passée en paramétre.
+
+## Note 
+
+>Afin de facilter l'implémentation, je vous propose d'utiliser du TDD Test Driven Development.
+
+Ce mode de développement cconsiste à réaliser les tests avant de réaliser l'implémentation. 
+
+Le fichier **test_station.py** contient ainsi un ensemble de tests permettant de valider les différentes étapes.
+
+Le code que vous allez réaliser doit être dans le fichier **station.py**.
+
+- test_should_load_from_dict :  Teste si la méthode **station.Station.from_dict** prenant en paramétre un dictionnaire representant une station retourne une instance de la classe **Station**
+- test_should_load_from_txt : Teste si la méthode  **station.Station.parse_from_text** prenant en paramétre le contenu d'un fichier **assets/data.json** retourne une liste de stations.
+- test_should_filter_by_service : Teste si la méthode **station.Station.filter_by_service** prenant une liste de stations et un type de service recherché retourne la liste des stations possédant ce service
+- test_should_sort_by_carburant :Tests si la méthode **station.Station.sort_by_carburant** prenant une liste de stations et un type de carburant retourne la liste des stations proposant ce carburant classées du moins cher au plus cher.
+
+
 
 
 
